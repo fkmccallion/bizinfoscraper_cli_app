@@ -1,5 +1,2 @@
-require "bizinfoscraper_cli_app/version"
-
-module BizinfoscraperCliApp
-  # Your code goes here...
-end
+require_relative "./bizinfoscraper_cli_app/version"
+require_relative './bizinfoscraper_cli_app/cli'
