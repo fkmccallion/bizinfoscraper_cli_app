@@ -2,7 +2,13 @@
 class BizinfoscraperCliApp::CLI
 
   def call
-    puts "test"
+    puts "Paste URL:"
+    url = gets.strip
+    info(url)
+  end
+
+  def info(url)
+
   end
 
 end
