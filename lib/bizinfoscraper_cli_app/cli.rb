@@ -1,10 +1,12 @@
 # CLI Controller
-class BizinfoscraperCliApp::CLI
+class CLI
 
   def call
     puts "Paste URL:"
     url = gets.strip
-    info(url)
+    bizinfo = Scraper.return_bizobjects(url)
+    #binding.pry
   end
+
 
 end

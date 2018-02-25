@@ -1,9 +1,12 @@
-require 'nokogiri'
 require 'open-uri'
-require 'pry'
 
-class scraper
+class Scraper
 
-
+  def self.return_bizobjects(url)
+    url
+    html = open(url)
+    doc = Nokogiri::HTML(html)
+    binding.pry
+  end
 
 end
