@@ -9,4 +9,6 @@ Program Operation
      3d. bizstate
      3e. bizzip
      3f. bizphohne
- 
+4. Add each object to class array
+5. Return list of objects bizname attributes
+6. Prompt user to select bizname attribute for additional information
