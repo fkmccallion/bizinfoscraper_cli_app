@@ -7,8 +7,4 @@ class BizinfoscraperCliApp::CLI
     info(url)
   end
 
-  def info(url)
-
-  end
-
 end
