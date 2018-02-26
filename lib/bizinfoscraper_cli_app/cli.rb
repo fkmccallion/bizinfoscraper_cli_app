@@ -2,10 +2,11 @@
 class CLI
 
   def call
-    puts "Paste URL:"
+    puts "Welcome to Bizinfoscraper!"
+    puts "Paste your URL:"
     url = gets.strip
-    bizinfo = Scraper.return_biznames(url)
-    binding.pry
+    biznames = Scraper.return_biznames(url)
+    Business.array_of_biznames(biznames)
   end
 
 

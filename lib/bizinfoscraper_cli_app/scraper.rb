@@ -8,8 +8,8 @@ class Scraper
 
     doc.css("div.search-results div.result").each do |business|
       business_info = {
-        :name => business.css("div.info h2 a.business-name span").text,
-        :business_url => business.css("div.info h2 a").attribute("href").value
+        :name => business.css("div.info h2 a.business-name").text,
+        :yp_url => business.css("div.info h2 a").attribute("href").value
       }
       businesses << business_info
     end
