@@ -14,15 +14,16 @@ class Input
     puts
     puts "Enter your search term:"
     search = gets.strip
-    search = search.gsub(" ", "+")
+    search = search.gsub(/[^0-9A-Za-z\s]/, '') #validate search input
+    #binding.pry
     url = "https://www.yellowpages.com/search?search_terms=" + search + "&geo_location_terms=" + location
     url
   end
 
   def self.additional_info
     puts "Select '1 - 10' for additional info on searched businesses"
-    puts "Select 'a' for a new search"
-    puts "Select 'b' to exit program"
+    puts "Select 'n' for a new search"
+    puts "Type 'exit' to exit program"
     selection = gets.strip
 
     case selection
