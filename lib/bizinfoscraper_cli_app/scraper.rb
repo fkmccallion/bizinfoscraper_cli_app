@@ -32,6 +32,7 @@ class Scraper
       doc = Nokogiri::HTML(html)
       n = 0
 
+      count = doc.css("article.business-card.clearfix.non-paid-listing section.primary-info div.contact p.address span").count
       doc.css("article.business-card.clearfix.non-paid-listing section.primary-info div.contact p.address span").each do |biz_info|
 
         if n == 0
@@ -46,7 +47,9 @@ class Scraper
         n += 1
 
       end #end of doc.css
-      updated_businesses << business_hash
+      if count == 4 #remove businesses having incomplete info
+        updated_businesses << business_hash
+      end
 
     end #end of biz_hash.each
     updated_businesses

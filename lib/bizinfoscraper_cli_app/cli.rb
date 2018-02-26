@@ -4,7 +4,6 @@ class CLI
   def call
     puts "Welcome to BizInfoScraper!"
     url = Input.new_search
-
     bizhasharray = Scraper.bizinfo(url)
     Business.create_biz_from_hash_array(bizhasharray)
 
@@ -24,12 +23,6 @@ class CLI
 
     Input.additional_info
 
-
-
-
-
-    #binding.pry
   end
-
 
 end

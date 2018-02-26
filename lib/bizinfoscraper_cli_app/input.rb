@@ -2,9 +2,15 @@ class Input
 
   def self.new_search
     puts "NEW SEARCH!"
-    puts "Enter your city:"
+    puts "Enter your zip code:"
     location = gets.strip
-    location = location.gsub(" ", "+")
+
+    if !location.match(/^[0-9]{5}(?:-[0-9]{4})?$/) #verify a valid zip code
+      puts
+      puts "Please enter a valid zip code!"
+      puts
+      new_search
+    end
     puts
     puts "Enter your search term:"
     search = gets.strip
