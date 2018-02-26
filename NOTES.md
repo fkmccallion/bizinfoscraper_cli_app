@@ -1,3 +1,5 @@
+Scrape business information from yellowpages.com
+
 Program Operation
 
 1. Welcome User
@@ -8,7 +10,7 @@ Program Operation
      3c. bizcity
      3d. bizstate
      3e. bizzip
-     3f. bizphohne
+     3f. bizphone
 4. Add each object to class array
 5. Return list of objects bizname attributes
 6. Prompt user to select bizname attribute for additional information
