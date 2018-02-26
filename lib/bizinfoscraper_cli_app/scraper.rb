@@ -8,26 +8,48 @@ class Scraper
     business_info = {}
     businesses = []
 
-    doc.css("div.search-results div.result").each do |business|
+    doc.css("div.search-results.organic div.result").each do |business|
       business_info = {
-        :name => business.css("div.info h2 a.business-name").text,
-        :yp_url => business.css("div.info h2 a").attribute("href").value
+        :name => business.css("div.srp-listing div.v-card div.info h2 a.business-name").text,
+        :yp_url => business.css("div.srp-listing div.v-card div.info h2 a").attribute("href").value
       }
       businesses << business_info
+
     end
+
+    businesses = additional_info(businesses)
 
     businesses
 
   end
 
-  def self.additional_info(biz)
-    #url = BASE_PATH + biz[:yp_url]
-    #html = open(url)
-    #doc = Nokogiri::HTML(html)
-    #doc.css("section.primary-info div.contact").each do |address|
-      binding.pry
-    #end
+  def self.additional_info(biz_hash)
+    biz_hash_array = []
+    biz_hash.each do |business_hash|
+      url = BASE_PATH + business_hash[:yp_url]
+      html = open(url)
+      doc = Nokogiri::HTML(html)
+      n = 0
+      doc.css("article.business-card.clearfix.non-paid-listing section.primary-info div.contact p.address span").each do |biz_info|
+        while n < 4
+          if n == 0
+            business_hash[:address] = biz_info.text
+          elsif n == 1
+            business_hash[:city] = biz_info.text
+          elsif n == 2
+            business_hash[:state] = biz_info.text
+          else
+            business_hash[:zip] = biz_info.text
+          end
+          n += 1
+        end
 
+      end
+      biz_hash_array << business_hash
+
+    end
+
+    biz_hash_array
   end
 
 end

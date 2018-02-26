@@ -6,7 +6,7 @@ class CLI
     puts "Paste your URL:"
     url = gets.strip
     biznames = Scraper.biznames(url)
-    Business.create_from_biznames(biznames)
+
   end
 
 
