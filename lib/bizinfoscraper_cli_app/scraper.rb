@@ -2,7 +2,7 @@ class Scraper
 
   BASE_PATH = "https://www.yellowpages.com"
 
-  def self.biznames(url)
+  def self.bizinfo(url)
     html = open(url)
     doc = Nokogiri::HTML(html)
     business_info = {}

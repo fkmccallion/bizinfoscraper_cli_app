@@ -5,7 +5,7 @@ class CLI
     puts "Welcome to Bizinfoscraper!"
     puts "Paste your URL:"
     url = gets.strip
-    biznames = Scraper.biznames(url)
+    biznames = Scraper.bizinfo(url)
 
   end
 
