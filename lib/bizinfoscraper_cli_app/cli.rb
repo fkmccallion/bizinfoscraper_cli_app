@@ -21,9 +21,8 @@ class CLI
     end
 
     puts
-    #puts "Select 1 - 10 for additional info on the Business"
-    #puts "Select 'a' to run another search"
-    #puts "Select 'b' to exit"
+
+    Input.additional_info
 
 
 
