@@ -1,6 +1,6 @@
 class Business
 
-  attr_accessor :name, :yp_url
+  attr_accessor :name, :yp_url, :address, :city, :state, :zip
 
   @@all = []
 
@@ -13,5 +13,8 @@ class Business
     @@all
   end
 
+  def self.create_biz_from_hash_array(biz_hash_array)
+    biz_hash_array.each {|biz_hash| Business.new(biz_hash)}
+  end
 
 end
