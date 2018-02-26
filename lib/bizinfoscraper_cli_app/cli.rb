@@ -2,13 +2,34 @@
 class CLI
 
   def call
-    puts "Welcome to Bizinfoscraper!"
-    puts "Paste your URL:"
-    url = gets.strip
+    puts "Welcome to BizInfoScraper!"
+    url = Input.new_search
+
     bizhasharray = Scraper.bizinfo(url)
     Business.create_biz_from_hash_array(bizhasharray)
-    puts "The following businesses meet your criteria:"
 
+    puts
+    puts "The following businesses meet your criteria:"
+    puts
+
+    n = 1
+    Business.all.each do |biz|
+      if n < 11
+        puts n.to_s + ". " + biz.name
+      end
+      n += 1
+    end
+
+    puts
+    #puts "Select 1 - 10 for additional info on the Business"
+    #puts "Select 'a' to run another search"
+    #puts "Select 'b' to exit"
+
+
+
+
+
+    #binding.pry
   end
 
 
