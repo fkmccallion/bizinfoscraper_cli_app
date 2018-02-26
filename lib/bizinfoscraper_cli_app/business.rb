@@ -13,8 +13,9 @@ class Business
     @@all
   end
 
-  def self.array_of_biznames(business_hashes)
+  def self.create_from_biznames(business_hashes)
     business_hashes.each do |business_hash|
+      Scraper.additional_info(business_hash)
       Business.new(business_hash)
     end
   end
