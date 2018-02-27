@@ -9,7 +9,7 @@ Additional information such as the address, city, state and zipcode can be given
 
 ## Usage
 
-Type the following adn follow the on screen prompts:
+Type the following and follow the on screen prompts:
 
     $ bizinfoscraper_cli_app
 
