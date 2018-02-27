@@ -1,6 +1,6 @@
 class Business
 
-  attr_accessor :name, :yp_url, :address, :city, :state, :zip
+  attr_accessor :name, :yp_url, :address, :city, :state, :zip, :phone
 
   @@all = []
 

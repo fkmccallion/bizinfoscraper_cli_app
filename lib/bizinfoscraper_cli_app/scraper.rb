@@ -47,6 +47,8 @@ class Scraper
         n += 1
 
       end #end of doc.css
+
+      business_hash[:phone] = doc.css("article.business-card.clearfix.non-paid-listing section.primary-info div.contact p.phone").text
       if count == 4 #remove businesses having incomplete info
         updated_businesses << business_hash
       end
