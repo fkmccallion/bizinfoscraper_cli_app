@@ -5,7 +5,7 @@ class Business
   @@all = []
 
   def initialize(business_hash)
-    business_hash.each {|key, value| self.send(("#{key}="), value)}
+    business_hash.each {|key, value| self.send(("#{key}="), value.strip.chomp(','))}
     @@all << self
   end
 
