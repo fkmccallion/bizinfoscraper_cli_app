@@ -5,13 +5,23 @@ Additional information such as the address, city, state and zipcode can be given
 
 ## Installation
 
-    $ gem install bizinfoscraper_cli_app
+Add this line to your application's Gemfile:
+
+    gem bizinfoscraper_cli_app
+
+Then execute:
+
+    $ bundle bizinfoscraper_cli_app
+
+Or install it yourself as:
+
+    $ gem install
 
 ## Usage
 
 Type the following and follow the on screen prompts:
 
-    $ bizinfoscraper_cli_app
+    $ ruby ./bin/bizinfo
 
 ## Development
 
