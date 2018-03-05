@@ -2,6 +2,7 @@ Scrape business information from yellowpages.com
 
 
 [x] A short description. (scrape business information from yellowpages.com and present info to the user)
+<br />
 [x] Install instructions. (included in the readme.md file)
 [x] A contributor's guide. (included in the readme.md file)
 [x] A link to the liscense for your code. (included in the readme.md file)
